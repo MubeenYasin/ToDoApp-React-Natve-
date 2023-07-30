@@ -11,9 +11,11 @@ const Input = () => {
 
     return (
         <View>
-            <TextInput style={styles.inputBar} placeholder='write a task' onChangeText={inputedText} />
+            {/* to get input from user */}
+            <TextInput style={styles.inputBar} placeholder='write a task' value={inputText} onChangeText={inputedText} />
 
-            <TaskList myInput={inputText} />
+            {/* parsing inputText and setInputText via props to TaskList */}
+            <TaskList myInput={inputText} clearInput={setInputText}/>
         </View>
     );
 }
